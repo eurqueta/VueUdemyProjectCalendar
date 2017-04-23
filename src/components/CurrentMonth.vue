@@ -16,7 +16,7 @@
                 }else {
                     this.$store.commit('setCurrentMonth', this.month -1);
                 }
-
+                this.$store.commit('eventFormActive',false);
                 
             },
             inc() {
@@ -26,7 +26,7 @@
                 }else {
                     this.$store.commit('setCurrentMonth', this.month +1);
                 }
-
+                this.$store.commit('eventFormActive',false);
             }
         },
         computed: {

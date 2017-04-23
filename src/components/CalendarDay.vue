@@ -17,10 +17,13 @@
                 return this.$store.state.events.filter(event => event.date.isSame(this.day, 'day'));
             },
             classObject () {
+                    let eventFormDate = this.$store.state.eventFormDate;
+                    let eventFormActive = this.$store.state.eventFormActive;
                     return {
                     day : true,
                     today : this.day.isSame(this.$moment(),'day'),
-                    past : this.day.isBefore(this.$moment(),'day')
+                    past : this.day.isBefore(this.$moment(),'day'),
+                    active: eventFormDate.isSame(this.day, 'day') && eventFormActive
                 }
             }
             
